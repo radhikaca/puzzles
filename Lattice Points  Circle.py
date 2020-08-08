@@ -1,18 +1,14 @@
-<<<<<<< HEAD
-# -*- coding: utf-8 -*-
+
 """
 Created on Sat Aug  8 00:04:34 2020
 
 @author: rad
 """
-=======
-''' Lattice Points '''
+
 
 import math as m
 
 r=25
-
-
 count=0
 
 lp=[(0,r),(r,0),(0,-r),(-r,0)]
