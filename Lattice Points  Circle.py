@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Aug  8 00:04:34 2020
+
+@author: rad
+"""
+
+import math as m
+
+r=25
+lp=[(0,r),(r,0),(0,-r),(-r,0)]
+ # (0,r),(r,0),(0,-r),(-r,0)
+for i in range ( 1, r-1):
+    yy = r*r - i*i
+    y=int(m.sqrt(yy))
+    if(y*y==yy):
+        lp.extend([(y,i),(i,y),(-y,i),(i,-y)])
+        
+
+print(lp)
+
+
