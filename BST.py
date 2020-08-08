@@ -2,6 +2,8 @@
 """
 Created on Fri Aug  7 11:30:04 2020
 
+Binary Search Tree
+
 @author: rad
 """
 
