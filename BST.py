@@ -6,6 +6,7 @@ Created on Fri Aug  7 11:30:04 2020
 """
 
 class Node:
+    
     def __init__(self, value):
         self.value=value
         self.left=None
@@ -13,7 +14,9 @@ class Node:
         
     
 class Tree:
+ 
    
+        
     def insert(self,root,value):
         
         if root==None :
@@ -51,9 +54,22 @@ class Tree:
            self.inorder(root.right)
        print(root.value)
         
+    def find_elt(self,root,value):
+        if(root==None):
+            return False
+        if(root.value==value):
+            return (root,root.value)
+        elif(value<=root.value):
+            return self.find_elt(root.left,value)
+        elif(value>=root.value):
+            return self.find_elt(root.right,value)
+        else:
+            return False
+        
+    
 myTree=Tree()
 root=None
-l=[5,2,1,4,3]
+l=[5,2,1,4,13]
 
 for i in l:
     root=myTree.insert(root,i)
@@ -64,3 +80,5 @@ print("***Pre-order***")
 myTree.pre_order(root)
 print("***Post-order***")
 myTree.post_order(root)
+
+print("Found elt :",myTree.find_elt(root,4))
