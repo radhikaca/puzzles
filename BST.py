@@ -17,12 +17,13 @@ class Node:
     
 class Tree:
  
-   
+    def __init__(self,value):
+        self.root=Node(value)
         
     def insert(self,root,value):
         
         if root==None :
-            return Node(value)
+            root= Node(value)
         else:
             if(value <= root.value):
                 cur=self.insert(root.left,value)
@@ -69,18 +70,19 @@ class Tree:
             return False
         
     
-myTree=Tree()
-root=None
-l=[5,2,1,4,13]
 
-for i in l:
-    root=myTree.insert(root,i)
+
+l=[5,2,1,4,13]
+obj=Tree(l[0])
+
+for i in l[1:]:
+    obj.insert(obj.root,i)
     #print("outside root", root.value)
 print("***In-order***")
-myTree.inorder(root)
+obj.inorder(obj.root)
 print("***Pre-order***")
-myTree.pre_order(root)
+obj.pre_order(obj.root)
 print("***Post-order***")
-myTree.post_order(root)
+obj.post_order(obj.root)
 
-print("Found elt :",myTree.find_elt(root,4))
+print("Found elt :",obj.find_elt(obj.root,4))
